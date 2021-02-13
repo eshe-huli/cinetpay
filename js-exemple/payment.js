@@ -15,9 +15,7 @@
     //Application des méthodes
     var site_id = 551054;
     var apikey = '19031599135ff441c7b70865.48289010';
-    var notify_url = 'http://mondomaine.com/notify/';
-    var return_url = 'http://mondomaine.com/notify/';
-    var cancel_url = 'http://mondomaine.com/notify/';
+    var notify_url = 'http://mondomaine.com/notify/';//Si vous avez mis en place un eurl pour etre notifier des paiement voir documentation CinetPay
     var currency = 'CFA';
     var debug = 1;
 
@@ -33,7 +31,7 @@
         cinetpayPayButton.addEventListener('click', function () {
             var parentForm = this.form;//Get inner form
             var parentFormElements = parentForm.elements
-            var designation = parentFormElements['designation'].value || 'PISAM-CARD';
+            var designation = parentFormElements['cpm_designation'].value || 'PISAM-CARD';
             var custom = parentFormElements['cpm_custom'].value || 'PISAM-CARD';
             var trans_id_date = new Date().toISOString().replace(/[T]/, '.').replace(/[-,: , T]/gm, '').slice(0, 15);
             var trans_id = 'PISAM-CARD.' + trans_id_date + '.' + Math.floor((Math.random() * 10000000) + 10000);
